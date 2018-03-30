@@ -18,10 +18,13 @@ class TermCountModel:
 
 class TFIDFModel(TermCountModel):
     def build(self):
-        model = super().build()
+        term_count_model = super().build()
+        model = np.zeros((len(self.words), len(self.docs)), dtype=float)
 
         for i, word in enumerate(self.words):
             for j, doc in enumerate(self.docs):
-                model[i, j] = (model[i, j] / len(doc)) * np.log(sum(model[i] > 0))
+                tf = term_count_model[i, j] / len(doc)
+                idf = np.log(sum(term_count_model[i] > 0))
+                model[i, j] = tf * idf
 
         return model
