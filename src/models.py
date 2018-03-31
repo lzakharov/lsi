@@ -1,11 +1,20 @@
+from abc import ABC, abstractmethod
+from typing import List
+
 import numpy as np
 
 
-class TermCountModel:
-    def __init__(self, words, docs):
+class AbstractModel(ABC):
+    def __init__(self, words: List[str], docs: List[List[str]]):
         self.words = words
         self.docs = docs
 
+    @abstractmethod
+    def build(self):
+        pass
+
+
+class TermCountModel(AbstractModel):
     def build(self):
         model = np.zeros((len(self.words), len(self.docs)), dtype=int)
 

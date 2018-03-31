@@ -1,14 +1,17 @@
 import string
+from typing import List, Type
+
 import numpy as np
 
-from .models import TermCountModel
+from .models import TermCountModel, AbstractModel
 
 
 class LSI:
     """Latent Semantic Indexing.
     """
 
-    def __init__(self, docs, query, model=TermCountModel, rank_approximation=2, stopwords=None,
+    def __init__(self, docs: List[str], query: str, model: Type[AbstractModel] = TermCountModel,
+                 rank_approximation: int = 2, stopwords: List[str] = None,
                  ignore_chars=string.punctuation):
         if stopwords is None:
             stopwords = []
