@@ -8,7 +8,8 @@ class LSITest(unittest.TestCase):
         documents = [
             'Shipment of gold damaged in a fire.',
             'Delivery of silver arrived in a silver truck.',
-            'Shipment of gold arrived in a truck.']
+            'Shipment of gold arrived in a truck.'
+        ]
         q = 'gold silver truck'
         lsi = LSI(documents, q)
         ranking = lsi.process()
