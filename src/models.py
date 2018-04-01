@@ -5,12 +5,12 @@ import numpy as np
 
 
 class AbstractModel(ABC):
-    def __init__(self, words: List[str], docs: List[List[str]]):
+    def __init__(self, words: List[str], docs: List[List[str]]) -> None:
         self.words = words
         self.docs = docs
 
     @abstractmethod
-    def build(self):
+    def build(self) -> np.ndarray:
         pass
 
 
