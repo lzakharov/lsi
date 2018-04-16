@@ -26,3 +26,7 @@ Result:
 ```
 [2, 1, 3]
 ```
+
+## References
+
+1. [SVD and LSI Tutorial 4: Latent Semantic Indexing (LSI) How-to Calculations](http://manuel.midoriparadise.com/public_html/svd-lsi-tutorial.pdf)
